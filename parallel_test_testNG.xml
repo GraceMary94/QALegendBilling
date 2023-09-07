@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="parallel testing Suite" parallel="tests">
+
+	<test thread-count="2" name="Parallel Testing-chrome">
+		<parameter name="browser" value="chrome" />
+		<classes>
+			<class name="com.qalegendbilling.testscipt.LoginTest">
+				<methods>
+					<include name="TC_001_verifyValidLogin" />
+					<include name="TC_002_verifyInvalidLogin" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test thread-count="2" name="Parallel Testing-firefox">
+		<parameter name="browser" value="FireFox" />
+		<classes>
+			<class name="com.qalegendbilling.testscipt.LoginTest">
+				<methods>
+					<include name="TC_001_verifyValidLogin" />
+					<include name="TC_002_verifyInvalidLogin" />
+				</methods>
+			</class>
+		</classes>
+	</test> 
+</suite> 

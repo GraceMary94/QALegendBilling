@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="2" total="3" passed="0" failed="1" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2023-09-07T07:37:09 IST" name="Default suite" finished-at="2023-09-07T07:37:19 IST" duration-ms="10071">
+    <groups>
+      <group name="Regression">
+        <method signature="LoginTest.TC_0010_verifyLoginWithNewlyAddUser()[pri:1, instance:com.qalegendbilling.testscipt.LoginTest@74e28667]" name="TC_0010_verifyLoginWithNewlyAddUser" class="com.qalegendbilling.testscipt.LoginTest"/>
+      </group> <!-- Regression -->
+    </groups>
+    <test started-at="2023-09-07T07:37:09 IST" name="Default test" finished-at="2023-09-07T07:37:19 IST" duration-ms="10071">
+      <class name="com.qalegendbilling.testscipt.LoginTest">
+        <test-method is-config="true" signature="setExtent(org.testng.ITestContext)[pri:0, instance:com.qalegendbilling.testscipt.LoginTest@74e28667]" started-at="2023-09-07T07:37:09 IST" name="setExtent" finished-at="2023-09-07T07:37:09 IST" duration-ms="357" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@594d9f07]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setExtent -->
+        <test-method is-config="true" signature="setUP()[pri:0, instance:com.qalegendbilling.testscipt.LoginTest@74e28667]" started-at="2023-09-07T07:37:09 IST" name="setUP" finished-at="2023-09-07T07:37:15 IST" duration-ms="5726" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUP -->
+        <test-method signature="TC_0010_verifyLoginWithNewlyAddUser()[pri:1, instance:com.qalegendbilling.testscipt.LoginTest@74e28667]" started-at="2023-09-07T07:37:15 IST" name="TC_0010_verifyLoginWithNewlyAddUser" description="TC_0010_Verify the user login with newly added user account" finished-at="2023-09-07T07:37:18 IST" duration-ms="2877" status="FAIL">
+          <exception class="java.lang.NullPointerException">
+            <message>
+              <![CDATA[Cannot invoke "org.apache.poi.xssf.usermodel.XSSFSheet.getLastRowNum()" because "com.qalegendbilling.utilities.ExcelUtility.sh" is null]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.NullPointerException: Cannot invoke "org.apache.poi.xssf.usermodel.XSSFSheet.getLastRowNum()" because "com.qalegendbilling.utilities.ExcelUtility.sh" is null
+at com.qalegendbilling.utilities.ExcelUtility.excelDataReader(ExcelUtility.java:37)
+at com.qalegendbilling.testscipt.LoginTest.TC_0010_verifyLoginWithNewlyAddUser(LoginTest.java:57)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:969)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:829)
+at org.testng.TestRunner.run(TestRunner.java:602)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:437)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:431)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:391)
+at org.testng.SuiteRunner.run(SuiteRunner.java:330)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
+at org.testng.TestNG.runSuites(TestNG.java:1099)
+at org.testng.TestNG.run(TestNG.java:1067)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.NullPointerException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC_0010_verifyLoginWithNewlyAddUser -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.qalegendbilling.testscipt.LoginTest@74e28667]" started-at="2023-09-07T07:37:18 IST" name="tearDown" finished-at="2023-09-07T07:37:19 IST" duration-ms="1415" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=TC_0010_verifyLoginWithNewlyAddUser status=FAILURE method=LoginTest.TC_0010_verifyLoginWithNewlyAddUser()[pri:1, instance:com.qalegendbilling.testscipt.LoginTest@74e28667] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.qalegendbilling.testscipt.LoginTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

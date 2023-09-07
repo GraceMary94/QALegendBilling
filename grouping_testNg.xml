@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Grouping testing">
+	<listeners>
+		<listener class-name="com.QALegendBilling.listeners.TestListener"></listener>
+	</listeners>
+	<test thread-count="5" name="Parameter testing-grouping">
+		<parameter name="browser" value="chrome" />
+		<groups>
+			<run>
+				<include name="Regression" />
+				<exclude name="Smoke" />
+				<exclude name="Sanity" />
+			</run>
+		</groups>
+		<classes>
+			<class name="com.QALegendBilling.testscript.ResetTest" />
+			<class name="com.QALegendBilling.testscript.RoleTest" />
+			<class name="com.QALegendBilling.testscript.UserManagementTest" />
+			<class name="com.QALegendBilling.automationcore.Base" />
+			<class name="com.QALegendBilling.automationcore.DriverFactory" />
+			<class name="com.QALegendBilling.testscript.LoginTest" />
+			<class name="com.QALegendBilling.testscript.UsersTest" />
+			<class name="com.QALegendBilling.testscript.SignoutTest" />
+		</classes>
+	</test> <!--
+	Test -->
+</suite> <!--
+Suite -->

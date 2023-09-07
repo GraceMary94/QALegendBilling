@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+  <test thread-count="5" name="Test">
+    <classes>
+      <class name="com.qalegendbilling.testscipt.ResetTest"/>
+      <class name="com.qalegendbilling.testscipt.RoleTest"/>
+      <class name="com.qalegendbilling.testscipt.UserTest"/>
+      <class name="com.qalegendbilling.testscipt.SignoutTest"/>
+      <class name="com.qalegendbilling.testscipt.LoginTest"/>
+      <class name="com.qalegendbilling.automationcore.Base"/>
+      <class name="com.qalegendbilling.automationcore.DirverFactory"/>
+      <class name="com.qalegendbilling.testscipt.UserManagmentTest"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->
