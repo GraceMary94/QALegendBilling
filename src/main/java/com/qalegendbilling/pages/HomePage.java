@@ -42,13 +42,10 @@ public class HomePage extends TestHelperUtility {
 	private final String _salesCommissionTab = "//i[@class='fa fa-handshake-o']//following-sibling::span";
 	@FindBy(xpath = _salesCommissionTab)
 	private WebElement salesCommissionTab;
-	private final String _userManagementTab="//span[text()='User Management']";//Finding UserManagement tab
-	@FindBy(xpath=_userManagementTab)
-	WebElement userManagementTab;
 	
-	private final String _roleTab="//span[contains(text(),'Roles')]";//Finding Roles tab
-	@FindBy(xpath=_roleTab)
-	WebElement roleTab;
+	private final String _homeTab = "//a[@href='https://qalegend.com/billing/public/home']//span";
+	@FindBy(xpath = _homeTab)
+	private WebElement homeTab;
 	
 	public boolean userMenuIsDisplayed() {
 	boolean status =page.isDisplayed(userTab);
@@ -70,6 +67,7 @@ public class HomePage extends TestHelperUtility {
 
 	public LoginPage clickSighnoutButton() {
 		page.clickOnElement(userAccount);
+		wait.waitForElementToBeVisible(driver, signoutField);
 		page.clickOnElement(signoutField);
 		return new LoginPage(driver);
 	}
@@ -78,21 +76,22 @@ public class HomePage extends TestHelperUtility {
 		return new LoginPage(driver);
 	}
 
-	public void clickUserManagementTab() {//Click on UserManagementTab
-		page.clickOnElement(userManagementTab);
-	}
-
-	public RolePage clickRoleTab() {//Click on RolesTab
-		page.clickOnElement(rolesTab);
-		return new RolePage(driver);
+	public void clickUserManagementTab() {
+		page.clickOnElement(userMgtTab);
+		wait.waitForElementToBeVisible(driver, salesCommissionTab); // explicit wait is used. wait till sales commission tab gets displayed
 	}
 
 	public UserPage clickOnUsers() {
 		page.clickOnElement(userTab);
 		return new UserPage(driver);
 }
-	public RolePage clickRolesTab() {
+	public RolePage clickRolesTab() {//Click on RolesTab
 		page.clickOnElement(rolesTab);
 		return new RolePage(driver);
-}
+	}
+	
+	public void clickHomeButton() {
+		page.clickOnElement(homeTab);
+	}
+
 }

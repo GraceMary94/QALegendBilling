@@ -49,12 +49,12 @@ public class LoginTest extends Base{
 		Assert.assertEquals(exp_ErrorMsg, actErrorMsg,ErrorMessages.INVALID_LOGIN);
 		
 	}
-	@Test(priority=1, description="TC_0010_Verify the user login with newly added user account",groups= {"Regression"})
-	public void TC_0010_verifyLoginWithNewlyAddUser() {
+	@Test(priority=1,description="TC_010 Verify user login with newly added user",groups= {"Regression"})
+	public void TC_010_verifyLoginUsingNewlyAddedUser() {
 		List<ArrayList<String>> data = ExcelUtility.excelDataReader("Login Page");
 		String uname = data.get(0).get(1);
 		String pwrd = data.get(1).get(1);
-		List<ArrayList<String>> data1 = ExcelUtility.excelDataReader("Create Page");
+		List<ArrayList<String>> data1 = ExcelUtility.excelDataReader("Add User");
 		String prefix = data1.get(0).get(1);
 		String firstName = RandomUtility.getfName();
 		String lastName = RandomUtility.getlName();
@@ -63,7 +63,9 @@ public class LoginTest extends Base{
 		String password = firstName + "@123";
 		String confirmPassword = password;
 		String salesCommissionPercentage = data1.get(8).get(1);
+
 		login = new LoginPage(driver);
+		String actTitile = login.loginPageTitle();
 		login.enterUserName(uname);
 		login.enterPassword(pwrd);
 		home = login.clickSubmit();
@@ -73,18 +75,21 @@ public class LoginTest extends Base{
 		create.enterUserDetails(prefix, firstName, lastName, email, userName, password, confirmPassword, salesCommissionPercentage);
 		create.clickOnIsActive();
 		user=create.clickOnSaveButton();
-		login.enterUserName(uname);
-		login.enterPassword(pwrd);
-		home = login.clickSubmit();
+		user.setValidEmail(email);
+		String actEmail = user.getValidEmail();
+		Assert.assertEquals(email, actEmail, ErrorMessages.RESET_PASSWORD_ERROR_MESSAGE);
+		home.clickHomeButton();
 		login = home.clickSighnoutButton();
-		String expUserName=data.get(3).get(1);
-		login=new LoginPage(driver);
-		login.enterUserName(uname);		
-		login.enterPassword(pwrd);
-		home=login.clickSubmit();     
+		String expTitle = login.loginPageTitle();
+		Assert.assertEquals(actTitile, expTitle, ErrorMessages.TITLE_FAILURE_MESSAGE);
+
+		login.enterUserName(userName);		
+		login.enterPassword(password);
+		home=login.clickSubmit1();     
 		String actualUserName=home.getUserAccountName();
+		String expUserName=firstName +" "+ lastName;
 		Assert.assertEquals(expUserName, actualUserName,ErrorMessages.USERNAME_FAILURE_MESSAGE);
-		
 	}
+	
 }
 

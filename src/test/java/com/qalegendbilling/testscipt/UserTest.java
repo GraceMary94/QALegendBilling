@@ -26,7 +26,7 @@ public class UserTest extends Base {
 		List<ArrayList<String>> data = ExcelUtility.excelDataReader("Login Page");
 		String uname = data.get(0).get(1);
 		String pwrd = data.get(1).get(1);
-		List<ArrayList<String>> data1 = ExcelUtility.excelDataReader("Create Page");
+		List<ArrayList<String>> data1 = ExcelUtility.excelDataReader("Add User");
 		String prefix = data1.get(0).get(1);
 		String firstName = RandomUtility.getfName();
 		String lastName = RandomUtility.getlName();
