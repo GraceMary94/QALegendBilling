@@ -55,7 +55,7 @@ public class Base extends TestHelperUtility {
 		driver.get(url);
 	}*/
 
-	@AfterMethod(alwaysRun = true)
+	/*@AfterMethod(alwaysRun = true)
 	public void tearDown(ITestResult result) throws IOException {
 		if (result.getStatus() == ITestResult.FAILURE) {
 			TakesScreenshot takeScreenshot = (TakesScreenshot) driver;
@@ -63,8 +63,11 @@ public class Base extends TestHelperUtility {
 			FileUtils.copyFile(screenshot, new File("./Screenshots/" + result.getName() + ".png"));
 		}
 		driver.quit();
+	}*/
+	@AfterMethod(alwaysRun = true)
+	public void tearDown() {
+		driver.quit();
 	}
-
 	@BeforeSuite
 	public void setExtent(final ITestContext testContext) {
 		ExtentManager.createInstance().createTest(testContext.getName(), "TEST FAILED");
