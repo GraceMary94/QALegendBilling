@@ -39,21 +39,21 @@ public class Base extends TestHelperUtility {
 		}
 	}
 //to run with configration file 
-	/*@BeforeMethod(alwaysRun = true)
+	@BeforeMethod(alwaysRun = true)
 	@Parameters({ "browser" })
 	public void setUP(String browserName) {
 		String url = prop.getProperty("url");
 		driver = DirverFactory.testInitialization(browserName);
 		driver.get(url);
-	}*/
+	}
 // to run individual test cases
-	@BeforeMethod(alwaysRun = true)
+	/*@BeforeMethod(alwaysRun = true)
 	public void setUP() {
 		String browser = prop.getProperty("browser");
 		String url = prop.getProperty("url");
 		driver = DirverFactory.testInitialization(browser);
 		driver.get(url);
-	}
+	}*/
 
 	@AfterMethod(alwaysRun = true)
 	public void tearDown(ITestResult result) throws IOException {
