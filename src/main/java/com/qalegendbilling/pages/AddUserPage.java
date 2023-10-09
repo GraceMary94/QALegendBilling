@@ -71,6 +71,7 @@ public class AddUserPage extends TestHelperUtility {
 
 	public void enterlastname(String lastName) {
 		page.enterText(lName, lastName);
+		lName.sendKeys(lastName);
 
 	}
 

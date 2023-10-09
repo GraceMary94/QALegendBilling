@@ -20,9 +20,10 @@ public class DirverFactory {
 
 	public static WebDriver testInitialization(String browser){
 	    if(browser.equals("chrome")){
-	       /* ChromeOptions ops=new ChromeOptions();
-	        ops.addArguments("--remote-allow-origins=*");*/
-	        System.setProperty("webdriver.chrome.driver","F:\\automation\\crome\\chromedriver-win64\\chromedriver.exe");
+	        ChromeOptions ops=new ChromeOptions();
+	        ops.addArguments("--remote-allow-origins=*");
+	    	String driverpath= Base.getdriverpath();
+	        System.setProperty("webdriver.chrome.driver",driverpath);
 	        tlDriver.set(new ChromeDriver());
 	    }else if(browser.equals("FireFox")){
 	        tlDriver.set(new FirefoxDriver());

@@ -22,7 +22,7 @@ import com.qalegendbilling.extentmanager.ExtentManager;
 import com.qalegendbilling.utilities.TestHelperUtility;
 public class Base extends TestHelperUtility {
 	public WebDriver driver;
-	public Properties prop;
+	public static Properties prop;
 	public FileInputStream fs;
 
 	public Base() {
@@ -46,7 +46,7 @@ public class Base extends TestHelperUtility {
 		driver = DirverFactory.testInitialization(browserName);
 		driver.get(url);
 	}
-// to run individual test cases
+//to run individual test cases
 	/*@BeforeMethod(alwaysRun = true)
 	public void setUP() {
 		String browser = prop.getProperty("browser");
@@ -54,18 +54,19 @@ public class Base extends TestHelperUtility {
 		driver = DirverFactory.testInitialization(browser);
 		driver.get(url);
 	}*/
+	public static String getdriverpath()
+	{
+		String driverpath=System.getProperty("user.dir")+ prop.getProperty("driverpath");
+		return driverpath;
+	}
 
-	/*@AfterMethod(alwaysRun = true)
+	@AfterMethod(alwaysRun = true)
 	public void tearDown(ITestResult result) throws IOException {
 		if (result.getStatus() == ITestResult.FAILURE) {
 			TakesScreenshot takeScreenshot = (TakesScreenshot) driver;
 			File screenshot = takeScreenshot.getScreenshotAs(OutputType.FILE);
 			FileUtils.copyFile(screenshot, new File("./Screenshots/" + result.getName() + ".png"));
 		}
-		driver.quit();
-	}*/
-	@AfterMethod(alwaysRun = true)
-	public void tearDown() {
 		driver.quit();
 	}
 	@BeforeSuite
@@ -77,4 +78,5 @@ public class Base extends TestHelperUtility {
 		// TODO Auto-generated method stub
 		
 	}
+	 
 }

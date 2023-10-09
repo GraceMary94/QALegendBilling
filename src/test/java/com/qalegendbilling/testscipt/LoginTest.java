@@ -23,7 +23,7 @@ public class LoginTest extends Base{
 	UserPage user;
 	CreatePage create;
 	
-	@Test(priority=1, description="TC_001 Verify valid login",groups= {"Regression"},retryAnalyzer=Retry.class)
+	@Test(priority=1,enabled=true, description="TC_001 Verify valid login",groups= {"Regression"},retryAnalyzer=Retry.class)
 	public void TC_001_verifyValidLogin() {
 		List<ArrayList<String>>data=ExcelUtility.excelDataReader("Login Page");
 		String uname=data.get(0).get(1);

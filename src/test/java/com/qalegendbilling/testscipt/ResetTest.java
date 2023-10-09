@@ -16,7 +16,7 @@ public class ResetTest extends Base {
 	ResetPage reset;
 	LoginPage login;
 
-	@Test(priority=2, description="TC_003 Verify the rest link is working or notn",groups= {"Sanity"})
+	@Test(priority=2, description="TC_003 Verify the rest link is working or not",groups= {"Sanity"})
 	public void TC_003_verifyReset() {
 		List<ArrayList<String>> data = ExcelUtility.excelDataReader("Reset Page");
 		String email = data.get(0).get(1);
